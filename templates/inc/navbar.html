@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-black bg-black">
+
+        <div class="navbar-nav">
+          
+            <a class="nav-link active" style="color: white;"  href="{% url 'home:home' %}">Home</a>
+            {% if request.user.is_authenticated %}
+            <a class="nav-link active" style="color: white;"  href="{% url 'account:user-profile' request.user.id %}">Profile</a>
+            <a class="nav-link active" style="color: white;"  href="{% url 'account:user-logout'  %}">Logout</a>
+            {% else %}
+            <a class="nav-link active"  style="color: white;" href="{% url 'account:user-singup'  %}">Singup</a>
+            <a class="nav-link active"  style="color: white;" href="{% url 'account:user-login'  %}">Login</a>
+            {% endif %}
+            
+
+
+
+      </div>
+    </div>
+  </nav>

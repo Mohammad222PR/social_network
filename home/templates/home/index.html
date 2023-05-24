@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+    {% block content %}
+        <h3> welcome </h3>
+        <div class="card">
+            {% for post in posts %}
+            <h2> {{post.user}} </h2>
+            <a href="{% url 'home:post_detail' post.id post.slug %}" class="card-body"> {{post.body|truncatewords:4}} </a>
+            {% endfor %}
+        </div>
+    {% endblock %}
